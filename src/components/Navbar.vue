@@ -46,7 +46,7 @@ export default{
 </script>
 
 <template>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar">
         <a class="navbar-brand" href="#"><img src="../assets/dito-txt.svg" width="" height="40" alt=""></a>
         
         <div class="" id="navbarNav">
@@ -108,6 +108,8 @@ nav{
         ul{
             justify-content: center;
             align-items: center;
+            flex-direction: initial;
+            li{ margin: 0 10px;}
             li:hover{
                 .border-effect{
                     margin: auto;

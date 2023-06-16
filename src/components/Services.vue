@@ -122,6 +122,7 @@ export default{
         }
         .row{
             padding: 15px;
+            flex-direction: column-reverse;
             .about-pro-services{
                 h5{
                     margin-top: 15px;
