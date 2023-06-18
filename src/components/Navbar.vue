@@ -47,38 +47,38 @@ export default{
 
 <template>
     <nav class="navbar">
-        <a class="navbar-brand" href="#"><img src="../assets/dito-txt.svg" width="" height="40" alt=""></a>
+        <a class="navbar-brand" href="#"><img src="../assets/dito-txt.svg" width="150" height="50" alt="Logo DITO en texte"></a>
         
         <div class="" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link link-home" href="#">Home
+                    <a class="nav-link link-home" href="#" aria-label="Lien vers l'accueil">Home
                         <div class="border-effect"></div>
                     </a>
-                    <a class="nav-link icon-home" href="#"><i class="bi bi-house-door-fill"></i>
-                        <div class="border-effect"></div>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link link-services" href="#services">Services
-                        <div class="border-effect"></div>
-                    </a>
-                    <a class="nav-link icon-services" href="#services"><i class="bi bi-gear-wide-connected"></i>
+                    <a class="nav-link icon-home" href="#"><i class="bi bi-house-door-fill" aria-label="Lien vers l'accueil"></i>
                         <div class="border-effect"></div>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-contact" href="#contact">Contact
+                    <a class="nav-link link-services" href="#services" aria-label="Lien vers les services proposés">Services
                         <div class="border-effect"></div>
                     </a>
-                    <a class="nav-link icon-contact" href="#contact"><i class="bi bi-envelope-at"></i>
+                    <a class="nav-link icon-services" href="#services" aria-label="Lien vers les services proposés"><i class="bi bi-gear-wide-connected"></i>
                         <div class="border-effect"></div>
                     </a>
                 </li>
-                <button class="btn item-dark-reader">
+                <li class="nav-item">
+                    <a class="nav-link link-contact" href="#contact" aria-label="Lien vers le formulaire de contact">Contact
+                        <div class="border-effect"></div>
+                    </a>
+                    <a class="nav-link icon-contact" href="#contact" aria-label="Lien vers le formulaire de contact"><i class="bi bi-envelope-at"></i>
+                        <div class="border-effect"></div>
+                    </a>
+                </li>
+                <btn class="btn item-dark-reader" type="button" role="button">
                     <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
                     <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
-                </button>
+                </btn>
                
             </ul>
         </div>
@@ -128,7 +128,7 @@ nav{
             .item-dark-reader{
                 position: absolute;
                 right: 20px;
-                font-size: 20px;
+                font-size: 1.5rem;
             }            
             .icon-home, .icon-services, .icon-contact{
                 display: none;
@@ -141,6 +141,12 @@ nav{
 @media (max-width: 768px) {
     nav{
         padding: 5px 0px;
+        .navbar-brand{
+            img{ 
+                height: 40px;
+                width: 80%;
+            }
+        }
         #navbarNav{
             ul{
                 display: flex;

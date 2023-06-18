@@ -27,7 +27,7 @@ export default{
 
         <div class="row titles">    
             <div class="col-12 logo-texte">
-                <img src="../assets/logo.dito.svg" width="200" alt="">
+                <img src="../assets/logo.dito.svg" width="200" height="auto" alt="Logo DITO sans texte">
             </div>
             <div class="col-12 title">
                 <h2>Dépannage Informatique</h2>

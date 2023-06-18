@@ -50,34 +50,34 @@ export default{
   <div class="container-fluid album-ctr">
     <div class="row">
       <div class="col">
-        <div class="img-1 album_1" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-2 album_1" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-3 album_1" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-4 album_1" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
+        <div  class="img-1 album_1" width="200" height="200" alt="Image de présentation dans un carrousel" loading="lazy" ></div>
+        <div class="img-2 album_1" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-3 album_1" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-4 album_1" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
       </div>
       <div class="col">
-        <div class="img-5 album_2" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-6 album_2" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-7 album_2" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-8 album_2" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
+        <div class="img-5 album_2" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-6 album_2" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-7 album_2" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-8 album_2" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
       </div>
       <div class="col">
-        <div class="img-9 album_3" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-10 album_3" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-12 album_3" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-13 album_3" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
+        <div class="img-9 album_3" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-10 album_3" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-12 album_3" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-13 album_3" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
       </div>
       <div class="col">
-        <div class="img-14 album_4" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-15 album_4" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-16 album_4" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-17 album_4" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
+        <div class="img-14 album_4" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-15 album_4" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-16 album_4" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-17 album_4" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
       </div>
       <div class="col">
-        <div class="img-18 album_5" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-19 album_5" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-20 album_5" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
-        <div class="img-21 album_5" width="200" height="200" alt="Image de présentation dans un carrousel" decoding="auto"></div>
+        <div class="img-18 album_5" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-19 album_5" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-20 album_5" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
+        <div class="img-21 album_5" width="200" height="200" alt="Image de présentation dans un carrousel"></div>
       </div>
     </div>
   </div>
@@ -87,7 +87,7 @@ export default{
 .album-ctr{
   .col{
     width: 200px;
-    height: 200px;
+    height: 230px;
     text-align: center;
     overflow: hidden;
     padding: 0;
@@ -99,47 +99,47 @@ export default{
       
     }
     .img-1{ 
-      background-image: url('../assets/images/reseau1.jpg');
+      background-image: url('../assets/images/reseau1.webp');
     }
-    .img-2{ background-image: url('../assets/images/checkpoint-action.jpg');
+    .img-2{ background-image: url('../assets/images/checkpoint-action.webp');
    }
-    .img-3{ background-image: url('../assets/images/code.jpg');
+    .img-3{ background-image: url('../assets/images/code.webp');
    }
-    .img-4{ background-image: url('../assets/images/couloirreseau.jpg');
+    .img-4{ background-image: url('../assets/images/couloirreseau.webp');
     }
-    .img-5{ background-image: url('../assets/images/reseau2.jpg');
+    .img-5{ background-image: url('../assets/images/reseau2.webp');
     }
-    .img-6{ background-image: url('../assets/images/informatique1.jpg');
+    .img-6{ background-image: url('../assets/images/informatique1.webp');
     }
-    .img-7{ background-image: url('../assets/images/diagnostic1.jpg');
+    .img-7{ background-image: url('../assets/images/diagnostic1.webp');
     }
-    .img-8{ background-image: url('../assets/images/diagnostic.jpg');
+    .img-8{ background-image: url('../assets/images/diagnostic.webp');
     }
-    .img-9{ background-image: url('../assets/images/reparationpc1.jpg');
+    .img-9{ background-image: url('../assets/images/reparationpc1.webp');
     }
-    .img-10{ background-image: url('../assets/images/installationinformatique.jpg');
+    .img-10{ background-image: url('../assets/images/installationinformatique.webp');
     }
-    .img-11{ background-image: url('../assets/images/pcenreseau1.jpg');
+    .img-11{ background-image: url('../assets/images/pcenreseau1.webp');
     }
-    .img-12{ background-image: url('../assets/images/pcenreseau1.jpg');
+    .img-12{ background-image: url('../assets/images/pcenreseau1.webp');
     }
-    .img-13{ background-image: url('../assets/images/diagnostic1.jpg');
+    .img-13{ background-image: url('../assets/images/diagnostic1.webp');
     }
-    .img-14{ background-image: url('../assets/images/checkpoint.jpg');
+    .img-14{ background-image: url('../assets/images/checkpoint.webp');
     }
-    .img-15{ background-image: url('../assets/images/informatiquegameur.jpg');
+    .img-15{ background-image: url('../assets/images/informatiquegameur.webp');
     }
-    .img-16{ background-image: url('../assets/images/piece-informatique.jpg');
+    .img-16{ background-image: url('../assets/images/piece-informatique.webp');
     }
-    .img-17{ background-image: url('../assets/images/installationreseau.jpg');
+    .img-17{ background-image: url('../assets/images/installationreseau.webp');
     }
-    .img-18{ background-image: url('../assets/images/pcenreseau.jpg');
+    .img-18{ background-image: url('../assets/images/pcenreseau.webp');
     }
-    .img-19{ background-image: url('../assets/images/reparationpc2.jpg');
+    .img-19{ background-image: url('../assets/images/reparationpc2.webp');
     }
-    .img-20{ background-image: url('../assets/images/reparationpc.jpg');
+    .img-20{ background-image: url('../assets/images/reparationpc.webp');
     }
-    .img-21{ background-image: url('../assets/images/checkpoint-aldi.jpg');
+    .img-21{ background-image: url('../assets/images/checkpoint-aldi.webp');
     }
 
   }

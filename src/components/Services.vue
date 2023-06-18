@@ -9,7 +9,7 @@ export default{
         <h1 class="main-title">Une expertise qui s'adapte aux besoins des professionnels</h1>
         <div class="row pro-services">
             <div class="col-lg-6 col-md-12 img">
-                <img src="../assets/images/services-pro.jpg" width="" height="" alt="Poignée de mains entre professionnels" decoding="auto">
+                <img src="../assets/images/services-pro.webp" width="596" height="auto" alt="Poignée de mains entre professionnels" rel="preload" decoding="auto">
             </div>
             <div class="col-lg-6 co-md-12 about-pro-services">
                 <h5>Vous êtes à la recherche de la performance ? Vous souhaitez optimiser l'efficacité du SI de votre entreprise ? 
@@ -56,7 +56,7 @@ export default{
                 
             </div>
             <div class="col-lg-6 col-md-12 img"> 
-                <img src="../assets/images/services-particuliers.jpg" width="" height="" alt="Bureau d'un particulier" decoding="auto">
+                <img src="../assets/images/services-particuliers.webp" width="596" height="auto" alt="Bureau d'un particulier" rel="preload" decoding="auto">
             </div>
         </div>
 
@@ -73,11 +73,6 @@ export default{
     .row{
         align-content: center;
         padding: 40px;
-        .img{
-            img{
-                width: 100%;
-            }
-        }
         .about-pro-services{
             p{ 
                 margin: 5px 0;
@@ -115,6 +110,10 @@ export default{
 // Version mobile
 @media (max-width: 768px) {
     .services-ctr{
+        .pro-services .img img, .part-services .img img{
+            width: 100%;
+        }
+
         .main-title{
             text-align: center;
             font-size: 26px;
@@ -122,7 +121,6 @@ export default{
         }
         .row{
             padding: 15px;
-            flex-direction: column-reverse;
             .about-pro-services{
                 h5{
                     margin-top: 15px;
@@ -133,6 +131,9 @@ export default{
                 }
             }
             .about-part-services p.subtitle{ color: #0085A6;}
+        }
+        .part-services{
+            flex-direction: column-reverse;
         }
     }
 }

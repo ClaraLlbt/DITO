@@ -53,10 +53,10 @@ export default{
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 info-contact">
                 <div class="contents-grp">
                     <div class="row social-network-icons">
-                        <div class="col"><img src="../assets/dito-txt.svg" width="150px" alt=""></div>
+                        <div class="col"><img src="../assets/dito-txt.svg" width="150px" height="auto" alt="Logo DITO en texte"></div>
                         <div class="col icons"> 
-                            <a href="https://www.linkedin.com/in/remy-joly-11552a1b2/"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://www.facebook.com/reparation.pc.714"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/remy-joly-11552a1b2/" aria-label="Lien vers le profil LinkedIn"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://www.facebook.com/reparation.pc.714" aria-label="Lien vers la page Facebook"><i class="bi bi-facebook"></i></a>
                         </div>
                     </div>
                     <div class="row info-dito">
@@ -74,7 +74,7 @@ export default{
                         </div>
                         <div class="row about">
                             <div class="col-12 col-md-6 about-us">
-                                <h4>A propos</h4>
+                                <h5>A propos</h5>
                                 <p>DITO est une entreprise spécialisée dans le domaine du dépannage informatique et réseau. Avec une expérience de 4 ans sur le terrain,
                                     DITO propose des solutions adaptées aux besoins de ses clients, aussi bien particuliers que professionnels. 
                                     Intervenant dans les zones du Var, des Alpes-Maritimes et des Bouches-du-Rhône, 
@@ -83,7 +83,7 @@ export default{
                                 </p>
                             </div>
                             <div class="col intervention">
-                                <h4>Zone d'intervention</h4>
+                                <h5>Zone d'intervention</h5>
                                 <p>83 - Var</p>
                                 <p>06 - Alpes Maritimes</p>
                                 <p>13 - Bouche-du-Rhône</p>
@@ -177,6 +177,7 @@ export default{
                         a i {
                             margin: 0 10px;
                             color: white;
+                            font-size: 2rem;
                             &:hover{
                                 border-bottom: 1px solid white;
                             }
@@ -199,11 +200,11 @@ export default{
                     .about{
                         font-size: 12px;
                         border-bottom: 1px solid white;
-                        h4{ font-size: large;}
                         .about-us{
                             p{ 
                                 text-align: justify;
                                 width: 80%;
+                                font-size: 1rem;
                             }
                         }
                         .intervention{
@@ -214,7 +215,10 @@ export default{
                                 width: 70%;
                                 justify-content: center;
                                 margin: 15% 0;
-                                p{ margin: 10px 0; }
+                            }
+                            p{ 
+                                margin: 10px 0;
+                                font-size: 1rem; 
                             }
                         }
                         
@@ -222,7 +226,7 @@ export default{
                 }
                 .contact{
                     .col{ 
-                        font-size: 12px;
+                        font-size: 1.2rem;
                         p{
                             margin: 15px 0;
                             a{ color: white;}
@@ -242,6 +246,7 @@ export default{
                 width: 90%;
                 label{
                     margin: 0 10px;
+                    font-size: 1.5rem;
                 }
                 .row{
                     width: 100%;
