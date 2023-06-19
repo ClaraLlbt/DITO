@@ -1,6 +1,5 @@
-const https = require('https')
+const http = require('http');
 const app = require('./app');
-const fs = require('fs');
 
 const normalizePort = val => {
   const port = parseInt(val, 10);
@@ -13,7 +12,7 @@ const normalizePort = val => {
   }
   return false;
 };
-const port = normalizePort(process.env.PORT || '443');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 const errorHandler = error => {
@@ -35,11 +34,8 @@ const errorHandler = error => {
       throw error;
   }
 };
-const serverIP = '0.0.0.0'; // Adresse IP Externe du serveur
 
-
-var server = https.createServer(app)
-
+const server = http.createServer(app);
 
 server.on('error', errorHandler);
 server.on('listening', () => {
@@ -48,4 +44,4 @@ server.on('listening', () => {
   console.log('Listening on ' + bind);
 });
 
-server.listen(port)
+server.listen(port);

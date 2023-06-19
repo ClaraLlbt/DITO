@@ -24,21 +24,13 @@ export default{
         },
         submitForm(){
 
-            axios.post('http://localhost:3000/send', {
-                    headers: {
-                        'Content-Type': 'multipart/form-data',
-                    },
-                    data: {
-                        formData : this.formData
-                    }
-                })
+            axios.post('http://localost:3000/send', this.formData)
                 .then((response) => {
                     console.log(response.data);
-                    // window.location.reload()
+                    window.location.reload()
                 })
                 .catch(error => {
-                    const msgerror = error.response;
-                    this.notyf.error(msgerror.error)    
+                    console.log(error)    
                 })
             }
     }
@@ -111,18 +103,18 @@ export default{
                         <label for="">Formulaire de contact</label>
                         <div class="row">
                             <div class="col-6">
-                                <input v-model="this.formData.firstname" type="text" class="form-control" id="inputName" placeholder="&#x27A4 Votre nom" required>
+                                <input v-model="this.formData.firstname" type="text" pattern="[a-zA-ZÀ-ÿ\u00C0-\u017F]+([ '-][a-zA-ZÀ-ÿ\u00C0-\u017F]+)*" class="form-control" id="inputName" placeholder="&#x27A4 Votre nom" required>
                             </div>
                             <div class="col-6">
-                                <input v-model="this.formData.lastname" type="text" class="form-control" id="inputLastname" placeholder="&#x27A4 Votre prénom" required>
+                                <input v-model="this.formData.lastname" type="text" pattern="[a-zA-ZÀ-ÿ\u00C0-\u017F]+([ '-][a-zA-ZÀ-ÿ\u00C0-\u017F]+)*" class="form-control" id="inputLastname" placeholder="&#x27A4 Votre prénom" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <input v-model="this.formData.email"  type="email" pattern="(^[a-zA-Z0-9_.]+[@]{1}[a-z0-9]+[\.][a-z]+$)" class="form-control" id="inputEmail" placeholder="&#x2709 Votre email" required>
+                                <input v-model="this.formData.email"  type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" class="form-control" id="inputEmail" placeholder="&#x2709 Votre email" required>
                             </div>
                             <div class="col-6">
-                                <input v-model="this.formData.phone" type="tel"  pattern="^(0)[1-9]([-. ]?[0-9]{2}){4}$" class="form-control" id="inputPhoneNumber" placeholder="&#x260F Votre numéro de téléphone" required>
+                                <input v-model="this.formData.phone" type="tel"  pattern="^0[1-9](\d{2}){4}$" class="form-control" id="inputPhoneNumber" placeholder="&#x260F Votre numéro de téléphone" required>
                             </div>
                         </div>
                         <div class="row">
@@ -132,7 +124,7 @@ export default{
                         </div>
                         <div class="row">
                             <div class="col textarea">
-                                <textarea v-model="this.formData.message" placeholder="  &#x270E Ecrivez votre message..." name="" id="inputMessage" rows="3"></textarea>
+                                <textarea v-model="this.formData.message" placeholder=" &#x270E Ecrivez votre message..." maxlength="350" id="inputMessage" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -303,8 +295,10 @@ export default{
                 justify-content: center;
                 .contents-grp{
                     width: 100%;
-                    .contact .col{
+                    .contact {
+                        .number-phone p a, .email{
                         font-size: 1rem;
+                        }
                     }
                 }
             }
@@ -330,7 +324,7 @@ export default{
         }
     }
     .footer-ctr p{
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 }
 </style>
