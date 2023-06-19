@@ -4,7 +4,6 @@ import HdrBanner from '../components/Banner.vue';
 import Contact from '../components/Contact.vue';
 import Navbar from '../components/Navbar.vue';
 import Services from '../components/Services.vue';
-import axios from 'axios'
 export default{
     name: "Home",
     components: { Navbar, HdrBanner, Album, Services, Contact },

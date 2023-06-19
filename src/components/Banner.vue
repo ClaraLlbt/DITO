@@ -30,7 +30,7 @@ export default{
                 <img src="../assets/logo.dito.svg" width="200" height="auto" alt="Logo DITO sans texte">
             </div>
             <div class="col-12 title">
-                <h2>Dépannage Informatique</h2>
+                <h1>Dépannage Informatique</h1>
             </div>
 
         </div>    
@@ -52,7 +52,7 @@ export default{
         top: 13px;
         right: 80px;
         a{
-            color: #0085A6;
+            color:#0085A6 ;
             i{
                 margin: 0 15px;
                 color: #0085A6;
@@ -79,20 +79,28 @@ export default{
     .titles{
         z-index: 1;
         width: 100%;
+        height: 100%;
         .col-12{
             text-align-last: center;
             img{
                 position: relative;
                 // bottom: -50%;
-                filter: drop-shadow(-3px 0px 0px white);
+                filter: drop-shadow(-3px 3px 2px #232945);
                 animation: rotateLogo;
                 animation-duration: 2s;
                 animation-iteration-count: 2;
                 // animation: name duration timing-function delay iteration-count direction fill-mode;
             }
-            h2{
+            h1{
                 color: white;
             }
+        }
+        .col-12.logo-texte{
+            align-self: self-end;
+        }
+        .col-12.title{
+            align-self: center;
+
         }
         .col-12.logo-texte{
             transform: translate(-100%);
@@ -129,7 +137,15 @@ export default{
 }
 
 // Mobile Version
-@media (max-width: 768px) {
+@media (max-width: 320px) {
+    .banner-ctr{
+        .titles{
+            h1{ font-size: 1.3rem;}
+        }
+    }
+}
+
+@media (min-width: 321px) and (max-width: 768px) {
     .banner-ctr{
         height: 475px;
         p.text-contact-now{
@@ -138,16 +154,17 @@ export default{
             bottom: 0px;
             color: white;
             font-size: 17px;
-            i{ color: white }
+            a {
+                color: white;
+                i{ color: white }
+            }
         }
         .titles{
             img{
                bottom: -30px;
                width: 170px;
             }
-            h2{ 
-                bottom: -65px ;
-            }
+            h1{ font-size: 1.5rem;}
         }
     }
 }

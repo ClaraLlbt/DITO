@@ -74,7 +74,7 @@ export default{
                         </div>
                         <div class="row about">
                             <div class="col-12 col-md-6 about-us">
-                                <h5>A propos</h5>
+                                <h4>A propos</h4>
                                 <p>DITO est une entreprise spécialisée dans le domaine du dépannage informatique et réseau. Avec une expérience de 4 ans sur le terrain,
                                     DITO propose des solutions adaptées aux besoins de ses clients, aussi bien particuliers que professionnels. 
                                     Intervenant dans les zones du Var, des Alpes-Maritimes et des Bouches-du-Rhône, 
@@ -83,7 +83,7 @@ export default{
                                 </p>
                             </div>
                             <div class="col intervention">
-                                <h5>Zone d'intervention</h5>
+                                <h4>Zone d'intervention</h4>
                                 <p>83 - Var</p>
                                 <p>06 - Alpes Maritimes</p>
                                 <p>13 - Bouche-du-Rhône</p>
@@ -111,28 +111,28 @@ export default{
                         <label for="">Formulaire de contact</label>
                         <div class="row">
                             <div class="col-6">
-                                <input v-model="this.formData.firstname" type="text" class="form-control" id="validationTooltip01" placeholder="&#x27A4 Votre nom" required>
+                                <input v-model="this.formData.firstname" type="text" class="form-control" id="inputName" placeholder="&#x27A4 Votre nom" required>
                             </div>
                             <div class="col-6">
-                                <input v-model="this.formData.lastname" type="text" class="form-control" id="validationTooltip01" placeholder="&#x27A4 Votre prénom" required>
+                                <input v-model="this.formData.lastname" type="text" class="form-control" id="inputLastname" placeholder="&#x27A4 Votre prénom" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <input v-model="this.formData.email"  type="email" pattern="(^[a-zA-Z0-9_.]+[@]{1}[a-z0-9]+[\.][a-z]+$)" class="form-control" id="validationTooltip01" placeholder="&#x2709 Votre email" required>
+                                <input v-model="this.formData.email"  type="email" pattern="(^[a-zA-Z0-9_.]+[@]{1}[a-z0-9]+[\.][a-z]+$)" class="form-control" id="inputEmail" placeholder="&#x2709 Votre email" required>
                             </div>
                             <div class="col-6">
-                                <input v-model="this.formData.phone" type="tel"  pattern="^(0)[1-9]([-. ]?[0-9]{2}){4}$" class="form-control" id="validationTooltip01" placeholder="&#x260F Votre numéro de téléphone" required>
+                                <input v-model="this.formData.phone" type="tel"  pattern="^(0)[1-9]([-. ]?[0-9]{2}){4}$" class="form-control" id="inputPhoneNumber" placeholder="&#x260F Votre numéro de téléphone" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                <input v-model="this.formData.object" type="text" pattern="([a-zA-Z]|[à-ü])+.{0,50}" class="form-control" id="validationTooltip01" placeholder="&#x2726 Sujet de votre message" required>
+                                <input v-model="this.formData.object" type="text" pattern="([a-zA-Z]|[à-ü])+.{0,50}" class="form-control" id="inputObjectMessage" placeholder="&#x2726 Sujet de votre message" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col textarea">
-                                <textarea v-model="this.formData.message" placeholder="  &#x270E Ecrivez votre message..." name="" id="" rows="3"></textarea>
+                                <textarea v-model="this.formData.message" placeholder="  &#x270E Ecrivez votre message..." name="" id="inputMessage" rows="3"></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -258,10 +258,10 @@ export default{
                         width: 100%;
                     }
                     input, textarea{
-                        background: #80c2d2;
+                        background: #80C2D2;
                         &::placeholder{
                             color: white;
-                            font-size: 12px;
+                            font-size: 1rem;
                             padding: 5px;
                         }
                     }
@@ -272,7 +272,7 @@ export default{
                         border-radius: 0;
                         padding: 5px;
                         &:hover{
-                            background: #80c2d2;
+                            background: #80C2D2;
                         }
                     }
                 }
@@ -283,9 +283,10 @@ export default{
 }
 .footer-ctr{
     text-align-last: center;
-    background-color: #80c2d2;
+    background-color: #80C2D2;
     p{
         margin: 10px;
+        font-size: 1.2rem;
         color: white;
     }
 }
@@ -302,6 +303,9 @@ export default{
                 justify-content: center;
                 .contents-grp{
                     width: 100%;
+                    .contact .col{
+                        font-size: 1rem;
+                    }
                 }
             }
             .form-column{
@@ -311,9 +315,22 @@ export default{
                 form{
                     width: 85%;
                     padding: 10px;
+                    .row{
+                        input, textarea{
+                        &::placeholder{
+                            font-size: 0.8rem;
+                            padding: 5px;
+                            }
+                        }
+                        .btn{ width: 50%;}
+                    
+                    }
                 }
             }
         }
-    }     
     }
+    .footer-ctr p{
+        font-size: 1rem;
+    }
+}
 </style>

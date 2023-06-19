@@ -6,15 +6,15 @@ export default{
 
 <template>
     <div id="services" class="container services-ctr">
-        <h1 class="main-title">Une expertise qui s'adapte aux besoins des professionnels</h1>
+        <h2 class="main-title">Une expertise qui s'adapte aux besoins des professionnels</h2>
         <div class="row pro-services">
             <div class="col-lg-6 col-md-12 img">
                 <img src="../assets/images/services-pro.webp" width="596" height="auto" alt="Poignée de mains entre professionnels" rel="preload" decoding="auto">
             </div>
             <div class="col-lg-6 co-md-12 about-pro-services">
-                <h5>Vous êtes à la recherche de la performance ? Vous souhaitez optimiser l'efficacité du SI de votre entreprise ? 
+                <h3>Vous êtes à la recherche de la performance ? Vous souhaitez optimiser l'efficacité du SI de votre entreprise ? 
                     <em>Etablissons ensemble vos besoins</em>
-                </h5>
+                </h3>
                 <p>&#187 Audit Informatique et Réseau</p>
                 <p>&#187 Installation d'équipements Informatique et Réseau</p>
                 <p>&#187 Cablage Réseau</p>
@@ -28,7 +28,7 @@ export default{
         </div>
         <div class="row part-services">
             <div class="col-lg-6 col-md-12 about-part-services">
-                <h1>Mais aussi à ceux des particuliers</h1>
+                <h3>Mais aussi à ceux des particuliers</h3>
                 <p class="subtitle">&#10030 Intervention à domicile</p>
                 <p class="subtitle">&#10030 Devis et diagnostic gratuit</p>
                 <p class="subtitle">&#9776 Préstations : </p>
@@ -66,13 +66,17 @@ export default{
 
 <style lang="scss">
 .services-ctr{
-    h1{
+    h2{
         margin: 30px  auto;
+        font-size: 2.2rem;
     }
     .main-title{ text-align-last: center; }
     .row{
         align-content: center;
         padding: 40px;
+        .img{
+            img{ width: 100%;}
+        }
         .about-pro-services{
             p{ 
                 margin: 5px 0;
@@ -80,7 +84,7 @@ export default{
             }
         }
         .about-part-services{
-            h1{ 
+            h3{ 
                 margin: 0px 0px 20px 0px;
             }
             p{ 
@@ -108,10 +112,21 @@ export default{
 }
 
 // Version mobile
+// @media (max-width: 412px) {
+//    .services-ctr{
+//           .pro-services .about-pro-services h3, .part-services .about-part-services h3{
+//                margin: 10px 0;
+//            }
+//
+//}
+//}
 @media (max-width: 768px) {
     .services-ctr{
         .pro-services .img img, .part-services .img img{
             width: 100%;
+        }
+        .pro-services .about-pro-services h3, .part-services .about-part-services h3{
+                margin: 10px 0;
         }
 
         .main-title{

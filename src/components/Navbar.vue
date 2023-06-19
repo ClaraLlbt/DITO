@@ -75,10 +75,12 @@ export default{
                         <div class="border-effect"></div>
                     </a>
                 </li>
-                <btn class="btn item-dark-reader" type="button" role="button">
-                    <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
-                    <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
-                </btn>
+                <li class="item-dark-reader">
+                    <btn id="darkmode" role="button" class="btn" aria-label="buton darkmode">
+                        <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
+                        <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
+                    </btn>
+                </li>
                
             </ul>
         </div>
@@ -125,10 +127,13 @@ nav{
                     }
                 }
             }
-            .item-dark-reader{
+            li.item-dark-reader{
                 position: absolute;
                 right: 20px;
-                font-size: 1.5rem;
+                margin: 0;
+                .btn{
+                    font-size: 1.5rem;
+                }
             }            
             .icon-home, .icon-services, .icon-contact{
                 display: none;
