@@ -1,0 +1,57 @@
+@import './base.css';
+/* CSS Dark mode design */ 
+
+.dark{
+  color-scheme: dark;
+  --color-background: #16171d; /* it's better to use a dark grey color instead of pure black */
+}
+
+.dark .app{
+  color: #adb5bd;
+}
+
+.dark a, .nav-link{
+  color: #adb5bd;
+}
+
+.dark button.btn.item-dark-reader i{
+  color: #0085A6;
+}
+
+.dark .banner-ctr .design-bckgrd::before{
+  background-color: ghostwhite;
+}
+
+
+
+/* App Design */
+.app{
+  color: #485665;
+  overflow: hidden;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+h1{
+  margin: 50px 0;
+}
+
+a,.nav-link{
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #485665;
+  
+}
+
+@media (hover: hover) {
+  a:hover, .nav-link:hover {
+    color: #0085A6;
+  }
+}
+@media (max-width: 2000px){
+  body { 
+    overflow:scroll !important;
+    padding-right: 0px !important 
+  }
+}
+
