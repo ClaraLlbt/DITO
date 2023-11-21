@@ -1,48 +1,46 @@
 <script>
 import { useDark, useToggle } from "@vueuse/core";
+import { RouterLink } from "vue-router";
 export default{
     name: "Navbar",
-    data(){
-        return{
-            dark : ''
-        }
+    data() {
+        return {
+            dark: ''
+        };
     },
-    mounted(){
-        this.responsiveIcons()
-        this.darkMode()
-    },  
-    methods : {
-        responsiveIcons(){
-            const iconHome = document.querySelector('.icon-home')
-            const iconServices = document.querySelector('.icon-services')
-            const iconContact = document.querySelector('.icon-contact')
-
+    mounted() {
+        this.responsiveIcons();
+        this.darkMode();
+    },
+    methods: {
+        responsiveIcons() {
+            const iconHome = document.querySelector('.icon-home');
+            const iconServices = document.querySelector('.icon-services');
+            const iconContact = document.querySelector('.icon-contact');
             if (window.matchMedia("(max-width: 768px)").matches) {
                 /* La largeur minimum de l'affichage est 600 px inclus */
-                console.log("format mobile detecté")
-                iconHome.classList.add('mbl')
-                iconServices.classList.add('mbl')
-                iconContact.classList.add('mbl')
-
-            } else {
-                console.log("format mobile non detecté")
+                console.log("format mobile detecté");
+                iconHome.classList.add('mbl');
+                iconServices.classList.add('mbl');
+                iconContact.classList.add('mbl');
+            }
+            else {
+                console.log("format mobile non detecté");
                 /* L'affichage est inférieur à 600px de large */
             }
         },
-        
-        darkMode(){
+        darkMode() {
             const isDark = useDark();
-            const toggleDark = useToggle(isDark)
-            this.dark = isDark
-
+            const toggleDark = useToggle(isDark);
+            this.dark = isDark;
             console.log(this.dark);
-
-            const btnDkMod = document.querySelector('.item-dark-reader')
-            btnDkMod.addEventListener('click', function(){
-                toggleDark()
-            })
+            const btnDkMod = document.querySelector('.item-dark-reader');
+            btnDkMod.addEventListener('click', function () {
+                toggleDark();
+            });
         },
-    }
+    },
+    components: { RouterLink }
 }
 </script>
 
@@ -53,7 +51,7 @@ export default{
         <div class="" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link link-home" href="#" aria-label="Lien vers l'accueil">Home
+                    <a class="nav-link link-home" href="#" aria-label="Lien vers l'accueil"><router-link to="/">Home</router-link>
                         <div class="border-effect"></div>
                     </a>
                     <a class="nav-link icon-home" href="#"><i class="bi bi-house-door-fill" aria-label="Lien vers l'accueil"></i>
@@ -61,10 +59,18 @@ export default{
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-services" href="#services" aria-label="Lien vers les services proposés">Services
+                    <a class="nav-link link-services" href="#services" aria-label="Lien vers les services proposés"><router-link to="/#services">Services</router-link>  
                         <div class="border-effect"></div>
                     </a>
                     <a class="nav-link icon-services" href="#services" aria-label="Lien vers les services proposés"><i class="bi bi-gear-wide-connected"></i>
+                        <div class="border-effect"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-contact" aria-label="Lien vers le formulaire de contact"><router-link to="/actualités">Actualités</router-link>
+                        <div class="border-effect"></div>
+                    </a>
+                    <a class="nav-link icon-contact" href="#actu" aria-label="Lien vers le formulaire de contact"><i class="bi bi-envelope-at"></i>
                         <div class="border-effect"></div>
                     </a>
                 </li>
@@ -106,7 +112,7 @@ nav{
     backdrop-filter: blur(100px);
     height: 50px;
     &:hover{
-        background: #f0f8fe;
+        background: #E9EAEC;
     }
     .navbar-brand{
         position: inherit;
@@ -119,13 +125,15 @@ nav{
             align-items: center;
             flex-direction: initial;
             li{ margin: 0 10px;}
-            li .btn-agenda{
+            li #btn-agenda{
                 background: none;
+                color: #F76F00;
+                font-size: x-large;
             }
             li:hover{
                 .border-effect{
                     margin: auto;
-                    border-bottom: 1px solid #0085A6;
+                    border-bottom: 1px solid #F76F00;
                     animation: borderEffectOnHover 1s ease-in-out;
                 }
                 @keyframes borderEffectOnHover {
@@ -143,6 +151,7 @@ nav{
                 margin: 0;
                 .btn{
                     font-size: 1.5rem;
+                    color: #F76F00;
                 }
             }            
             .icon-home, .icon-services, .icon-contact{

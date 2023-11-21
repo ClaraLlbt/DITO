@@ -91,16 +91,15 @@ export default {
 
 <template>
   <div class="container-fluid reviews-ctr">
-    <h1>Avis Google</h1>
-    <div class="container-fluid map-ctr">
+    <div class="container map-ctr">
       <div id="google-reviews" style="display: none;"></div>
     </div>
     <div class="row reviews-row">
-      <div v-for="review in reviews" :key="review.author_name" class="card review" :id="reviews.indexOf(review)">
+      <h3 class="title-ctr"><span>&#8280;</span> Ils nous ont noté ! </h3>
+      <div  class="card review" v-for="review in reviews" :key="review.author_name" :id="reviews.indexOf(review)">
         <div class="card-header">
           <div class="review-photo"><img class="img-review" :src="review.profile_photo_url" alt=""></div>
           <div class="header-info">
-            <div  class="review-author">{{ review.author_name }} </div>
             <div class="review-rating">Note : {{ review.rating }}/5</div>
             <div class="rating">
               <span class="etoile_grise" title="Donner 5 étoiles">★</span>
@@ -113,8 +112,7 @@ export default {
         </div>
         <div class="card-body">
           <div id="text" class="review-text">« {{ review.text }}»</div>
-        </div>
-        <div class="card-footer">
+
           <div class="review-relative-time">{{ review.relative_time_description }}</div>
         </div>
       </div>
@@ -127,29 +125,54 @@ export default {
   /* Ajoutez des styles CSS pour personnaliser l'apparence de vos avis */
 .reviews-ctr{
   .reviews-row{
+    width: 65%;
+    margin: auto;
     display: flex;
     padding: 100px 0;
     .card.review{
       padding: 0;
-      width: 15%;
-      margin: 15px auto;
+      height: 400px;
+      width: 400px;
+      margin: 3px;
+      border: none;
+      
       .card-header {
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: none;
+        border: none;
         .review-photo{
-          height: 50px;
-          width: 50px;
+          height: 60px;
+          width: 60px;
+          margin: 5px;
           img{ width: 100%;}
         }
         .header-info{
           padding: 5px;
+          .review-rating{
+            text-align: center;
+          }
+          .rating{
+            font-size: x-large;
+            span{ color: #FABA05;}
+          }
         }
         
       }
       .card-body{
         overflow: hidden;
+        padding: 0;
         .review-text{
           overflow: hidden;
           font-size: small;
+          text-align: center;
+          padding: 5px 20px;
+        }
+        .review-relative-time{
+          text-align: center;
+          font-weight: 800;
+          color: lightgray;
         }
       }
      

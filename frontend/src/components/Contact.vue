@@ -57,11 +57,41 @@ export default{
 
 <template>
     <div id="contact" class="container-fluid contact-ctr">
-
-        <div class="row">
+        <div class="row intro">
+            <h3 class="title-ctr"><span>&#8280;</span> Vous souhaitez nous contacter ou être rappelé ?</h3>
+            <p>Discutons de votre projet et établissons ensemble vos besoins</p>
+        </div>
+        <div class="row ctct-row">
             <!-- Contact Informations -->
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 info-contact">
-                <div class="contents-grp">
+                <div class="row">
+                    <div class="col-4 map-img">
+                    </div>
+                    <div class="col-4 email">
+                        <span>
+                            <i class="bi bi-envelope-at"></i>
+                            <p>contact@dito-pro.fr</p>
+                        </span>
+                    </div>
+                    <div class="col-4 phone-img"></div>
+                </div>
+                <div class="row">
+                    <div class="col-4 adress">
+                        <span><i class="bi bi-geo-alt-fill"></i>
+                            <p>813 Av. des Moulins, 83200 Toulon</p>
+                        
+                        </span>
+                    </div>
+                    <div class="col-4 email-img">
+                    </div>
+                    <div class="col-4 nb-phone">
+                        <span>
+                            <i class="bi bi-phone-vibrate"></i>
+                            <p><a href="tel:+33627034216"> 06 27 03 42 16</a></p>
+                        </span>
+                    </div>
+                </div>
+                <!-- <div class="contents-grp">
                     <div class="row social-network-icons">
                         <div class="col"><img src="../assets/dito-txt.svg" width="150px" height="60px" alt="Logo DITO en texte"></div>
                         <div class="col icons"> 
@@ -112,11 +142,11 @@ export default{
                             <p><i class="bi bi-at"></i> Remy@dito-pro.fr</p>
                         </div>
                     </div>
-                    </div>
+                    </div> -->
 
             </div>
             <!-- Contact Form -->
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6 form-column">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 form-column">
                     <form id="form" action="" method="post" @submit.prevent="submitForm">
                         <label for="">Formulaire de contact</label>
                         <div class="row">
@@ -146,9 +176,16 @@ export default{
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
+                            <div class="checkbox">
+                                <input type="checkbox" name="acceptance-41" value="1" aria-invalid="false" required>
+                                <p>En soumettant ce formulaire, j'accepte que mes données personnelles soient utilisées pour me recontacter. 
+                                    Aucun autre traitement ne sera effectué avec mes informations. Pour connaître et exercer vos droits, 
+                                    veuillez consultez <RouterLink to="/politique-confidentialite">la politique de confidentialité.</RouterLink></p>
+                            </div>
+                            <div class="col submit">
                                 <button id="sendBtn" type="submit" @click="sendEmail()" class="btn">Envoyer &#8594</button>
                             </div>
+                            
                         </div>
                     </form>
             </div>
@@ -158,25 +195,73 @@ export default{
 
     <footer class="container-fluid footer-ctr">
             <div class="row">
-                <p>Copyright @{{this.currentYear}}. Laliberté. All Rigths Reserved.
+                <p>Copyright @{{this.currentYear}}. Laliberté. All Rigths Reserved. <router-link to="/mentionslégales">Mentions légales</router-link>
                 </p>
             </div>
     </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .contact-ctr{
-    height: 100vh;
-    background: #0085A6;
     display: flex;
     align-items: center;
-    color: white;
+    flex-direction: column;
     padding: 50px 30px 20px 30px;
-    .row{
+    .intro {
+        text-align: center;
+        p{ font-size: x-large;}
+    }
+    .ctct-row{
+        width: 100%;
+        margin: 100px auto;
+        justify-content: center;
         .info-contact{
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
+            flex-direction: column;
+            &::after{
+                content: "";
+                width: 78%;
+                box-shadow: 0px 0px 13px 3px black;
+                position: absolute;
+                bottom: -2px;
+                right: 0;
+                left: 0;
+                margin: auto;
+                z-index: -1;
+            }
+            .row{
+                height: 50%;
+                width: 90%;
+                border: 1px solid white;
+                .map-img{
+                    background: url('../assets/images/googlemap.jpg');
+                    background-position: center;
+                    background-size: cover;
+                }
+                .adress, .email, .nb-phone{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    background-color: #E9EAEC;
+                    color: #F76F00;
+                    i{
+                        font-size: 50px;
+                    }
+                }
+                .email-img{
+                    background: url('../assets/images/sentEmail.jpg');
+                    background-position: center;
+                    background-size: cover;
+                }
+                .phone-img{
+                    background: url('../assets/images/call.jpg');
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
             .contents-grp{
                 width: 90%;
                 .social-network-icons{
@@ -254,6 +339,7 @@ export default{
                 display: grid;
                 padding: 30px;
                 border: 1px solid white;
+                background: #E9EAEC;
                 width: 90%;
                 label{
                     margin: 0 10px;
@@ -285,6 +371,15 @@ export default{
                         &:hover{
                             background: #80C2D2;
                         }
+                    }
+                }
+                .row .checkbox{
+                    display: flex;
+                    align-items: flex-start;
+                    input{margin: 5px;}
+                    p{
+                        font-size: small;
+                        a{font-size: small;}
                     }
                 }
             }

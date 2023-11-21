@@ -4,7 +4,7 @@ import {Notyf} from 'notyf'
 import 'notyf/notyf.min.css'
 import Navbar from '../components/Navbar.vue';
 export default {
-    name: 'articles',
+    name: 'actualités',
     components:{ Navbar },
     data(){
         return{

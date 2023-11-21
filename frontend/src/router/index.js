@@ -10,19 +10,24 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/GoogleCalendar',
-      name: 'GoogleCalendar',
-      component: () => import('../views/GoogleCalendar.vue')
-    },
-    {
-      path: '/articles',
-      name: 'articles',
+      path: '/actualités',
+      name: 'actualités',
       component: () => import('../views/Articles.vue')
     },
     {
       path: '/logadmin',
       name: 'logadmin',
       component: () => import('../views/logAdmin.vue')
+    },
+    {
+      path: '/MentionsLégales',
+      name: 'MentionsLégales',
+      component: () => import('../views/ML.vue')
+    },
+    {
+      path: '/politique-confidentialite',
+      name: 'Politique de confidentialité',
+      component: () => import('../views/PC.vue')
     }
   ],
   base: 'https://clarallbt.github.io/DITO/'

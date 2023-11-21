@@ -6,14 +6,14 @@ export default{
 
 <template>
     <div id="services" class="container-fluid services-ctr">
-        <h2 class="main-title">Une expertise qui s'adapte aux besoins des professionnels</h2>
-        
         <div class="row pro-services">
-            <div class="col-lg-6 col-md-12">
+            <h2 class="main-title">Une expertise qui s'adapte aux besoins des professionnels</h2>
+            <h3 class="title-ctr"><span>&#8280;</span> Nos services </h3>
+            
+            <div class="col-lg-3 col-md-12">
                 <div class="card">
                     <div class="background">
                         <div class="bckgd-card little-circle"></div>
-                        <div class="bckgd-card big-circle"></div>
                     </div>
                     <div class="col-6 text">
                         <h3>Installation Checkpoint</h3>
@@ -25,11 +25,10 @@ export default{
                     
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-3 col-md-12">
                 <div class="card">
                     <div class="background">
                         <div class="bckgd-card little-circle"></div>
-                        <div class="bckgd-card big-circle"></div>
                     </div>
                     <div class="col-6 text">
                         <h3>Audit wifi</h3>
@@ -40,13 +39,10 @@ export default{
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row pro-services">
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-3 col-md-12">
                 <div class="card">
                     <div class="background">
                         <div class="bckgd-card little-circle"></div>
-                        <div class="bckgd-card big-circle"></div>
                     </div>
                     <div class="col-6 text">
                         <h3>Réseau</h3>
@@ -58,11 +54,10 @@ export default{
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-3 col-md-12">
                 <div class="card">
                     <div class="background">
                         <div class="bckgd-card little-circle"></div>
-                        <div class="bckgd-card big-circle"></div>
                     </div>
                     <div class="col-6 text">
                         <h3>Récupération de données</h3>
@@ -76,39 +71,59 @@ export default{
             </div>
         </div>
         
-        <!-- <div class="row part-services">
-            <div class="col-lg-6 col-md-12 about-part-services">
-                <h3>Mais aussi à ceux des particuliers</h3>
-                <p class="subtitle">&#10030 Intervention à domicile</p>
-                <p class="subtitle">&#10030 Devis et diagnostic gratuit</p>
-                <p class="subtitle">&#9776 Préstations : </p>
-                <div class="computer-services">
-                    
-                    <p class="benefit-title">Informatique (Windows, Linux, MacOs)</p>
-                    <p>&#187 Vente de matériel neuf et recondionné</p>
-                    <p>&#187 Installation du matériel informatique et Dépannage</p>
-                    <p>&#187 Installation/réinstallation/migration/nettoyage du système informatique</p>
-                    <p>&#187 Clonage/remplacement de disque dur</p>
-                    <p>&#187 Sécurisation et récupération des des données</p>
-                    <p>&#187 Remplacement des accéssoires informatiques</p>
+        <div class="row services-dscpt">
+            <h3 class="title-ctr"><span>&#8280;</span> Comprendre de quoi il s'agit...</h3>
+            <div class="row checkpoint-dscpt">
+                <div class="col-6 dscpt">
+                    <h4>Installation checkpoint</h4>
+                    <span>L'installation de bornes antivol dans une entreprise implique plusieurs étapes. 
+                        Tout d'abord, une évaluation des zones critiques est réalisée pour déterminer les emplacements stratégiques des bornes. 
+                        Ensuite, les bornes antivol sont physiquement installées, généralement aux entrées et sorties clés. 
+                        Les systèmes de sécurité électronique associés sont configurés et intégrés. 
+                        Enfin, un test complet est effectué pour garantir le bon fonctionnement du système, 
+                        assurant ainsi une protection efficace contre le vol.</span>
                 </div>
-                <div class="network-telecom-services">
-                    <p class="benefit-title">Réseau et Télécom</p>
-                    <p>&#187 Diagnostic des prises téléphoniques et tableaux de communication</p>
-                    <p>&#187 Raccordement et installation des prises téléphoniques et tableaux de communication</p>
-                    <p>&#187 Installation de box internet</p>
-                    <p>&#187 Installation téléassistance</p>
-                    <p>&#187 Test de fonctionnement de votre installation</p>
-                    <p>&#187 Sécurisation de vos données / Contrôle parental</p>
-                    <p>&#187 Création de boite mail</p>
+                <div class="col-4 img-dscpt"></div>
+            </div>
+            <div class="row audit-dscpt">
+                <div class="col-4 img-dscpt"></div>
+                <div class="col-6 dscpt">
+                    <h4>Audit de couverture wifi</h4>
+                    <span>Un audit de couverture Wi-Fi avec le service Ekahau implique l'utilisation d'outils spécialisés 
+                        pour évaluer et optimiser les réseaux sans fil. Ekahau permet la cartographie précise des signaux Wi-Fi, 
+                        l'identification des zones de faible couverture et l'analyse des interférences. En utilisant des données 
+                        de mesure en temps réel, cet audit permet d'ajuster la configuration des points d'accès, 
+                        d'optimiser la qualité du signal et d'améliorer la performance globale du réseau Wi-Fi, 
+                        assurant ainsi une connectivité fiable et efficace. </span>
                 </div>
-                
+            </div>
+            <div class="row network-dscpt">
+                <div class="col-6 dscpt">
+                    <h4>Déploiement du réseau wifi</h4>
+                    <span>Le déploiement et l'installation du réseau WiFi impliquent l'intégration complète des composants tels que le câblage, 
+                        les coffrets, les bornes, les switchs, les routeurs et les contrôleurs d'accès 
+                    </span>
+                </div>
+                <div class="col-4 img-dscpt"></div>
+            </div>
+            <div class="row data-restore-dscpt">
                 
             </div>
-            <div class="col-lg-6 col-md-12 img"> 
-                <img src="../assets/images/services-particuliers.webp" width="596" height="1096" alt="Bureau d'un particulier" rel="preload" decoding="auto">
+        </div>
+
+        <div class="row part-services">
+            <div class="col-4 title">
+                <h3><span>&#8280;</span> Et pour les particuliers ?!</h3>
             </div>
-        </div> -->
+            <div class="col-4 services">
+                <p class="benefit-title">Informatique (Windows, Linux, MacOs)</p>
+                <p>&#187 Installation du matériel informatique et Dépannage</p>
+                <p>&#187 Installation/réinstallation/migration/nettoyage du système informatique</p>
+                <p>&#187 Clonage/remplacement de disque dur</p>
+                <p>&#187 Sécurisation et récupération des des données</p>
+                <p>&#187 Remplacement des accéssoires informatiques</p>
+            </div>
+        </div>
 
     </div>
 
@@ -119,12 +134,12 @@ export default{
     .main-title{ 
         text-align-last: center;
         margin: 30px  auto;
-        font-size: 2.2rem; }
-    .row{
+        font-size: 4.2rem; }
+    .pro-services{
         align-content: center;
         padding: 40px;
-        width: 80%;
         margin: auto;
+        
         .card{
             height: 400px;
             flex-direction: row;
@@ -151,14 +166,9 @@ export default{
                 position: absolute;
                 }
                 .bckgd-card.little-circle{     
-                    height: 65%;
-                    width: 40%;
-                    transform: translate(-65px, -35px);
-                }
-                .bckgd-card.big-circle{
-                    height: 115%;
-                    width: 65%;
-                    transform: translate(-60px, 73px);
+                    height: 100%;
+                    width: 100%;
+                    transform: translate(-195px, 0);
                 }
             }
             .text{
@@ -172,6 +182,8 @@ export default{
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
+                padding: 50px 10px;
+                h3{ font-size: 30px;}
             }
 
         }
@@ -179,8 +191,9 @@ export default{
             place-self: center;
             text-align: center;
             img{ 
-                width: 80%;
-                filter: drop-shadow(-11px 0px 7px lightgrey);
+                width: 105%;
+                
+                margin: auto;
             }
         }
         .about-pro-services{
@@ -214,6 +227,82 @@ export default{
                 
             }
         }
+    }
+    .services-dscpt{
+        h3{
+            text-align: right;
+            padding-right: 185px;
+        }
+        .checkpoint-dscpt, .audit-dscpt, .network-dscpt {
+            height: 500px;
+            justify-content: center;
+            .dscpt{
+                background: white;
+                padding: 50px;
+                text-align: center;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                h4{
+                    font-family: 'League Gothic', sans-serif;
+                    font-size: 80px;
+                    text-transform: uppercase;
+                    text-align: right;
+                }
+                span{
+                    text-align: justify;
+                }
+            }
+            .img-dscpt{
+                background-position: center;
+                background-size: cover;
+            }
+            
+        }
+        .checkpoint-dscpt .img-dscpt{
+            background: url('../assets/images/checkpoint-action.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+        .audit-dscpt .img-dscpt{
+            background: url('../assets/images/Ekahau.png');
+            background-position: center;
+            background-size: contain;
+            background-color:#E9EAEC;
+            background-repeat: no-repeat;
+
+        }
+        .network-dscpt .img-dscpt{
+            background: url('../assets/images/reseau1.webp');
+            background-position: center;
+            background-size: cover;
+        }
+        
+    }
+    .part-services{
+        background: #017FA0;
+        margin-top: 50px;
+        height: 500px;
+        justify-content: center;
+        .title{ 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h3{ 
+                color: white;
+                font-size: 40px;
+                span{
+                    font-size: xxx-large;
+                    color: #F76F00;
+                    font-weight: 900;
+                }
+            }
+        }
+        .services{
+            align-self: center;
+            color: white;
+        }
+
     }
 }
 

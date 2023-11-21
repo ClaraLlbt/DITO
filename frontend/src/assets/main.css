@@ -30,22 +30,32 @@
   overflow: hidden;
   font-family: 'Noto Sans', sans-serif;
 }
-
-h1{
-  margin: 50px 0;
+h1, h2, h3, h4{
+  font-family: 'League Gothic', sans-serif;
 }
-
+.title-ctr{
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  margin-top: 70px;
+  margin-bottom: 25px;
+  font-size: 40px;
+}
+.title-ctr span{
+  font-size: 50px;
+  color: #F76F00;
+  font-weight: 900;
+}
 a,.nav-link{
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
-  color: #485665;
+  color: #F76F00;
   
 }
 
 @media (hover: hover) {
   a:hover, .nav-link:hover {
-    color: #0085A6;
+    color: #F76F00;
   }
 }
 @media (max-width: 2000px){

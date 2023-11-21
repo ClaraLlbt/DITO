@@ -84,10 +84,13 @@ export default{
 
         <div class="row titles">    
             <div class="col-12 logo-texte">
-                <img src="../assets/dito_logo.svg" width="400" height="400" alt="Logo DITO sans texte">
+                <img src="../assets/dito-white-logo.svg" width="400" height="400" alt="Logo DITO sans texte">
             </div>
             <div class="col-12 title">
                 <h1>Votre entreprise partenaire B2B Retail</h1>
+            </div>
+            <div class="col-12 double-down">
+                <a href="#services"><i class="bi bi-chevron-double-down"></i></a>
             </div>
 
         </div>    
@@ -96,7 +99,7 @@ export default{
 </template>
 
 <style lang="scss" scoped>
-.banner-ctr{
+.banner-ctr{ 
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -203,6 +206,12 @@ export default{
 
         }
         
+    }
+    .double-down{
+        i{
+            color: white;
+            font-size: 50px;
+        }
     }
 }
 // CSS animation
