@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/actualités',
       name: 'actualités',
-      component: () => import('../views/Articles.vue')
+      component: () => import('../views/Actualities.vue')
     },
     {
       path: '/logadmin',

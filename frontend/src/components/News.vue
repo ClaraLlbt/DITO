@@ -1,5 +1,5 @@
 <script>
-
+import Articles from './Articles.vue';
 
 // Exemple d'utilisation dans un composant Vue.js
 export default {
@@ -7,6 +7,7 @@ export default {
     return {
   }
   },
+  components: {Articles},
   mounted() {
     
     
@@ -20,22 +21,23 @@ export default {
 
 
 <template>
-    <div class="container news-ctr">
-        <div class="row" >
+    <div class="container-fluid news-ctr">
+        <div class="row actu-title" >
           <h3 class="title-ctr"><span>&#8280;</span> Actualités </h3>
           <h4>Restez informé de nos projets</h4>
         
+        </div>
+        <div class="row">
+          <Articles/>
         </div>
     </div>
 </template>
 
 <style lang="scss">
   .news-ctr{
-    .row{ 
-      .card{
-        background: none;
-        border: none;
-      }
+    .actu-title{ 
+      width: 70%;
+      margin: auto;
     }
   }
 </style>

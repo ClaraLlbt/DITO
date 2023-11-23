@@ -9,71 +9,57 @@ export default{
         <div class="row pro-services">
             <h2 class="main-title">Une expertise qui s'adapte aux besoins des professionnels</h2>
             <h3 class="title-ctr"><span>&#8280;</span> Nos services </h3>
-            
-            <div class="col-lg-3 col-md-12">
-                <div class="card">
-                    <div class="background">
-                        <div class="bckgd-card little-circle"></div>
-                    </div>
-                    <div class="col-6 text">
+           
+                        
+            <div class="card col-lg-3 col-md-12">
+                <a href="#checkpoint-dscpt" class="stretched-link"></a>
+                <div class="card-body text">
                         <h3>Installation Checkpoint</h3>
-                        <p>Installation de borne antivol</p>
-                    </div>
-                    <div class="col-6 img">
-                        <img src="../assets/icons/checkpoint.png" alt="">
-                    </div>
+                </div>
+                <div class="card-img img">
+                    <img src="../assets/icons/checkpoint.png" alt="">
+                </div>
                     
-                </div>
             </div>
-            <div class="col-lg-3 col-md-12">
-                <div class="card">
-                    <div class="background">
-                        <div class="bckgd-card little-circle"></div>
-                    </div>
+            
+            <div class="card col-lg-3 col-md-12">
+                <a href="#audit-dscpt" class="stretched-link"></a>
+                <div class="card-body">
                     <div class="col-6 text">
-                        <h3>Audit wifi</h3>
-                        <p>Audit et Installation de bornes wifi avec couverture EKAHAU</p>
-                    </div>
-                    <div class="col-6 img">
-                        <img src="../assets/icons/modem wifi.png" alt="">
+                        <h3>Audit wifi EKAHAU</h3>
                     </div>
                 </div>
+                <div class="card-img img">
+                        <img src="../assets/icons/modem wifi.png" alt="">
+                </div>
             </div>
-            <div class="col-lg-3 col-md-12">
-                <div class="card">
-                    <div class="background">
-                        <div class="bckgd-card little-circle"></div>
-                    </div>
+            <div class="card col-lg-3 col-md-12">
+                <a href="#network-dscpt" class="stretched-link"></a>
+                <div class="card-body">
                     <div class="col-6 text">
                         <h3>Réseau</h3>
-                        <p>Installation d'équipements réseau et brassage de baie</p>
-
-                    </div>
-                    <div class="col-6 img">
-                        <img src="../assets/icons/box server.png" alt="">
                     </div>
                 </div>
+                <div class="card-img img">
+                    <img src="../assets/icons/box server.png" alt="">
+                </div>
             </div>
-            <div class="col-lg-3 col-md-12">
-                <div class="card">
-                    <div class="background">
-                        <div class="bckgd-card little-circle"></div>
-                    </div>
+            <div class="card col-lg-3 col-md-12">
+                <a href="#data-restore-dscpt" class="stretched-link"></a>
+                <div class="card-body">
                     <div class="col-6 text">
                         <h3>Récupération de données</h3>
-                        <p>Installation de borne antivol</p>
                     </div>
-                    <div class="col-6 img">
-                        <img src="../assets/icons/data.png" alt="">
-                    </div>
-                    
+                </div>
+                <div class="card-img img">
+                    <img src="../assets/icons/data.png" alt="">
                 </div>
             </div>
         </div>
         
         <div class="row services-dscpt">
             <h3 class="title-ctr"><span>&#8280;</span> Comprendre de quoi il s'agit...</h3>
-            <div class="row checkpoint-dscpt">
+            <div id="checkpoint-dscpt" class="row checkpoint-dscpt">
                 <div class="col-6 dscpt">
                     <h4>Installation checkpoint</h4>
                     <span>L'installation de bornes antivol dans une entreprise implique plusieurs étapes. 
@@ -85,7 +71,7 @@ export default{
                 </div>
                 <div class="col-4 img-dscpt"></div>
             </div>
-            <div class="row audit-dscpt">
+            <div id="audit-dscpt" class="row audit-dscpt">
                 <div class="col-4 img-dscpt"></div>
                 <div class="col-6 dscpt">
                     <h4>Audit de couverture wifi</h4>
@@ -97,7 +83,7 @@ export default{
                         assurant ainsi une connectivité fiable et efficace. </span>
                 </div>
             </div>
-            <div class="row network-dscpt">
+            <div id="network-dscpt" class="row network-dscpt">
                 <div class="col-6 dscpt">
                     <h4>Déploiement du réseau wifi</h4>
                     <span>Le déploiement et l'installation du réseau WiFi impliquent l'intégration complète des composants tels que le câblage, 
@@ -106,22 +92,51 @@ export default{
                 </div>
                 <div class="col-4 img-dscpt"></div>
             </div>
-            <div class="row data-restore-dscpt">
+            <div id="data-restore-dscpt" class="row data-restore-dscpt">
                 
             </div>
         </div>
 
-        <div class="row part-services">
-            <div class="col-4 title">
-                <h3><span>&#8280;</span> Et pour les particuliers ?!</h3>
+        <div class="row other-services">
+            <img class="bckgd-cable" src="../assets/icons/cable-2.png" alt="">
+            <div class="col-5 title">
+                <h3><span>&#8280;</span>Autres services</h3>
+                <p>Forts de notre expertise dans le domaine de l'informatique, nous proposons également les services suivants pour les particuliers:</p>
             </div>
-            <div class="col-4 services">
-                <p class="benefit-title">Informatique (Windows, Linux, MacOs)</p>
+            <div class="col-6 services">
+                
+                    <div class="card col-3">
+                        <img src="../assets/icons/screen.png" width="200" alt="">
+                        <div class="card-body">
+                            Installation/Dépannage informatique
+                        </div>
+                    </div>
+                    <div class="card col-3">
+                        <img src="../assets/icons/SSD.png" width="200" alt="">
+                        <div class="card-body">Sauvegarde, Récupération et Remplacement du disque dur</div>
+                    </div>
+                    <div class="card col-3">
+                        <img src="../assets/icons/keyboard-mouse.png" width="200" height="200" alt="">
+                        <div class="card-body">Remplacement de votre matériel informatique</div>
+                    </div>
+                
+                <!-- <p class="benefit-title">Informatique (Windows, Linux, MacOs)</p>
+
                 <p>&#187 Installation du matériel informatique et Dépannage</p>
                 <p>&#187 Installation/réinstallation/migration/nettoyage du système informatique</p>
                 <p>&#187 Clonage/remplacement de disque dur</p>
                 <p>&#187 Sécurisation et récupération des des données</p>
-                <p>&#187 Remplacement des accéssoires informatiques</p>
+                <p>&#187 Remplacement des accéssoires informatiques</p> -->
+            </div>
+        </div>
+        <div class="row partnership">
+            <div class="col-4 logo-partner">
+                <img src="../assets/kaladev-logo.svg" alt="logo partenaire création web">
+            </div>
+            <div class="col-5 contact-partner">
+                <h3>NOTRE PARTENAIRE DE CREATION WEB</h3>
+                <p>Vous souhaitez représenter votre entreprise comme nous l'avons fait ?</p>
+                <div class="link"><a class="btn" href="https://kaladev.fr">Contactez notre partenaire</a></div>
             </div>
         </div>
 
@@ -138,51 +153,33 @@ export default{
     .pro-services{
         align-content: center;
         padding: 40px;
+        width: 90%;
         margin: auto;
-        
+        justify-content: space-between;
         .card{
-            height: 400px;
-            flex-direction: row;
-            border-radius: 0;
-            &::after{
-                content: "";
-                width: 94%;
-                box-shadow: 0px 0px 13px 3px black;
-                position: absolute;
-                bottom: -2px;
-                right: 0;
-                left: 0;
-                margin: auto;
-                z-index: -1;
+            width: 260px;
+            height: 270px;
+            border-radius: 30px;
+            background: #E6E7E9;
+            box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+            border: none;
+            &:hover{
+                transform: scale(1.05);
             }
-            .background{
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                overflow: hidden;
-                .bckgd-card{
-                background: linear-gradient(15deg, rgba(51,54,82,1) 0%, rgba(1,127,160,1) 100%);
-                border-radius: 50%;
-                position: absolute;
-                }
-                .bckgd-card.little-circle{     
-                    height: 100%;
-                    width: 100%;
-                    transform: translate(-195px, 0);
+            .stretched-link{
+                &::after{
+                    height: 270px;
                 }
             }
             .text{
                 margin: auto;
                 text-align: center;
-                color: #F0F7FE;
-                font-family: 'Montserrat', sans-serif;
-                height: 100%;
-                z-index: 1;
+                color: #F76F00;
+                width: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-                padding: 50px 10px;
                 h3{ font-size: 30px;}
             }
 
@@ -191,7 +188,7 @@ export default{
             place-self: center;
             text-align: center;
             img{ 
-                width: 105%;
+                width: 77%;
                 
                 margin: auto;
             }
@@ -279,30 +276,78 @@ export default{
         }
         
     }
-    .part-services{
+    .other-services{
         background: #017FA0;
         margin-top: 50px;
-        height: 500px;
+        height: 400px;
         justify-content: center;
+        .bckgd-cable{
+            opacity: 80%;
+            width: 27%;
+            position: absolute;
+            left: -70px;
+            top: 0;
+        }
         .title{ 
             display: flex;
             justify-content: center;
             align-items: center;
-            h3{ 
-                color: white;
-                font-size: 40px;
+            color: white;
+            flex-direction: column;
+            h3{
+                font-size: 65px;
                 span{
                     font-size: xxx-large;
                     color: #F76F00;
                     font-weight: 900;
                 }
             }
+            p{ 
+                text-align: center;
+                font-size: 18px;
+                width: 60%;
+            }
         }
         .services{
             align-self: center;
             color: white;
+            display: flex;
+            justify-content: space-around;
+            .card{
+                background: none;
+                img{ margin: auto;}
+                .card-body{ text-align: center;}
+            }
+            h4{
+                font-size: x-larger;
+            }
+            p{ font-size: large;}
         }
 
+    }
+    .partnership{
+        background: white;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        h3{
+            font-size: 65px;
+        }
+        p{ font-size: large;}
+        .logo-partner {
+            text-align: right;
+            img{
+                width: 40%;
+                margin: auto;
+                position: relative;
+                right: 50px;
+            }
+        }
+        .contact-partner{
+            .btn{    
+                background: linear-gradient(57deg,#ab9c7c,#cfc09f,#ffecb3,#cfc09f);
+            }
+        }
     }
 }
 

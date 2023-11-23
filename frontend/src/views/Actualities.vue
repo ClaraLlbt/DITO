@@ -3,9 +3,10 @@ import axios from 'axios';
 import {Notyf} from 'notyf'
 import 'notyf/notyf.min.css'
 import Navbar from '../components/Navbar.vue';
+import Articles from '../components/Articles.vue';
 export default {
     name: 'actualités',
-    components:{ Navbar },
+    components:{ Navbar, Articles },
     data(){
         return{
             articles : [],
@@ -379,18 +380,7 @@ export default {
         <hr>
 
         <!--// Bloc affichant les articles-->
-        <div class="row articles">
-            <div v-for="article in articles" :key="article.id" class="col-3 card">
-                <div class="card-header">
-                    <img :src="article.attachment" class="card-image-top" alt="">
-                </div>
-                
-                <div class="card-body">
-                    <h2>{{ article.title }}</h2>
-                    <span class="content"> {{ article.content }}</span>
-                </div>    
-            </div>
-        </div>
+        <Articles/>
 
 
         <div class="contact-ctr">
