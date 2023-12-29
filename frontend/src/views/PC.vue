@@ -8,6 +8,7 @@ export default {
 
 <template lang="">  
     <Navbar />
+    <div class="bckgd-filter"></div>  
     <div class="container PC-ctr">
         <div class="row">
             <h1 class="title-ctr"><span>&#8280;</span> Politique de confidentialité</h1>

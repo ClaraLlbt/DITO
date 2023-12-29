@@ -3,6 +3,7 @@ const cors = require('cors')
 const path = require('path');
 const bodyParser = require('body-parser')
 const articlesRoute = require('./routes/articles')
+const axios = require('axios');
 
 
 const app = express();
@@ -50,6 +51,16 @@ app.get('/articles/:id', articlesRoute)
 app.put('/articles/:id', articlesRoute)
 app.delete('/articles/:id', articlesRoute)
 app.delete('/articles', articlesRoute)
+
+app.post('/attachments/', articlesRoute)
+app.get('/attachments/', articlesRoute)
+
+app.get('/attachments/:id', articlesRoute) 
+
+app.delete('/attachments/:id', articlesRoute)
+
 app.post('/users', articlesRoute)
+app.post('/users/client', articlesRoute)
+app.post('/users/isAdmin', articlesRoute)
 
 module.exports = app;

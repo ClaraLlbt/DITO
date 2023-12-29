@@ -8,6 +8,7 @@ export default {
 
 <template lang="">  
     <Navbar />
+    <div class="bckgd-filter"></div>  
     <div class="container ML-ctr">
         <div class="row">
             <h1 class="title-ctr"><span>&#8280;</span> MENTIONS LEGALES</h1>

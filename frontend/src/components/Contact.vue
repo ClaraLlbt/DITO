@@ -1,71 +1,65 @@
 <script>
 import * as emailjs from 'emailjs-com';
+import GoogleMap from './GoogleMap.vue';
 
 
 export default{
     name: 'Contact',
-    data(){
-        return{
-            currentYear : '',
-                name: '',
-                lastname: '',
-                email: '',
-                phone: '',
-                object: '',
-                message: '',
-            
-        }
+    data() {
+        return {
+            currentYear: '',
+            name: '',
+            lastname: '',
+            email: '',
+            phone: '',
+            object: '',
+            message: '',
+        };
     },
-    created() {
-        this.copyrith()
-    },
+    
     methods: {
-        copyrith(){
-            this.currentYear = new Date().getFullYear();
-        },
-        sendEmail(){
-            const form = document.getElementById('form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const serviceID = 'service_on3xm1i';
-            const templateID = 'template_kdgggjd';
-            const userId = '98Q9atBk-IYjOIE9k';
-
-            const templateParams = {
-                from_name: this.name,
-                from_lastname: this.lastname,
-                object: this.object,
-                message: this.message,
-                phone: this.phone,
-                reply_to: this.email
-            };
-   
-                emailjs.sendForm(serviceID, templateID, this, userId, templateParams) 
-                .then((response) => {
+        
+        sendEmail() {
+            const form = document.getElementById('form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const serviceID = 'service_on3xm1i';
+                const templateID = 'template_kdgggjd';
+                const userId = '98Q9atBk-IYjOIE9k';
+                const templateParams = {
+                    from_name: this.name,
+                    from_lastname: this.lastname,
+                    object: this.object,
+                    message: this.message,
+                    phone: this.phone,
+                    reply_to: this.email
+                };
+                emailjs.sendForm(serviceID, templateID, this, userId, templateParams)
+                    .then((response) => {
                     console.log(response.data);
                     document.location.href = "/";
                 })
-                .catch(error => {
-                    console.log(error)    
-                })
-            })
+                    .catch(error => {
+                    console.log(error);
+                });
+            });
         }
-    }
-    
+    },
+    components: { GoogleMap }
 }
 </script>
 
 <template>
     <div id="contact" class="container-fluid contact-ctr">
-        <div class="row intro">
-            <h3 class="title-ctr"><span>&#8280;</span> Vous souhaitez nous contacter ou être rappelé ?</h3>
+        <div class="row intro">      
+            <div class="main-title-ctr title-right"><span id="four-dot-punctuation">&#8280;</span><h3> Vous souhaitez nous contacter ou être rappelé ? </h3></div>
             <p>Discutons de votre projet et établissons ensemble vos besoins</p>
         </div>
-        <div class="row ctct-row">
+        <div class="row contact-row">
             <!-- Contact Informations -->
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 info-contact">
                 <div class="row">
                     <div class="col-4 map-img">
+                        <GoogleMap/>
                     </div>
                     <div class="col-4 email">
                         <span>
@@ -91,58 +85,7 @@ export default{
                         </span>
                     </div>
                 </div>
-                <!-- <div class="contents-grp">
-                    <div class="row social-network-icons">
-                        <div class="col"><img src="../assets/dito-txt.svg" width="150px" height="60px" alt="Logo DITO en texte"></div>
-                        <div class="col icons"> 
-                            <a href="https://www.linkedin.com/in/remy-joly-11552a1b2/" aria-label="Lien vers le profil LinkedIn"><i class="bi bi-linkedin"></i></a>
-                            <a href="https://www.facebook.com/reparation.pc.714" aria-label="Lien vers la page Facebook"><i class="bi bi-facebook"></i></a>
-                        </div>
-                    </div>
-                    <div class="row info-dito">
-                        <div class="row menu">
-                            <div class="col">
-                                <a class="nav-link" href="#">Home
-                                    <div class="border-effect"></div>
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a class="nav-link" href="#services">Services
-                                    <div class="border-effect"></div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row about">
-                            <div class="col-12 col-md-6 about-us">
-                                <h4>A propos</h4>
-                                <p>DITO est une entreprise spécialisée dans le domaine du dépannage informatique et réseau. Avec une expérience de 4 ans sur le terrain,
-                                    DITO propose des solutions adaptées aux besoins de ses clients, aussi bien particuliers que professionnels. 
-                                    Intervenant dans les zones du Var, des Alpes-Maritimes et des Bouches-du-Rhône, 
-                                    DITO met son expertise à disposition pour assurer une assistance rapide et efficace 
-                                    en cas de panne ou de dysfonctionnement informatique.
-                                </p>
-                            </div>
-                            <div class="col intervention">
-                                <h4>Zone d'intervention</h4>
-                                <p>83 - Var</p>
-                                <p>06 - Alpes Maritimes</p>
-                                <p>13 - Bouche-du-Rhône</p>
-
-                                <div class="inquire">
-                                    <p>Renseignements &#8594</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row contact">
-                        <div class="col number-phone"> 
-                            <p><a href="tel:+33627034216"><i class="bi bi-telephone"></i> 06 27 03 42 16</a></p>
-                        </div>
-                        <div class="col email"> 
-                            <p><i class="bi bi-at"></i> Remy@dito-pro.fr</p>
-                        </div>
-                    </div>
-                    </div> -->
+               
 
             </div>
             <!-- Contact Form -->
@@ -193,12 +136,7 @@ export default{
 
     </div>
 
-    <footer class="container-fluid footer-ctr">
-            <div class="row">
-                <p>Copyright @{{this.currentYear}}. Laliberté. All Rigths Reserved. <router-link to="/mentionslégales">Mentions légales</router-link>
-                </p>
-            </div>
-    </footer>
+    
 </template>
 
 <style lang="scss" scoped>
@@ -209,9 +147,13 @@ export default{
     padding: 50px 30px 20px 30px;
     .intro {
         text-align: center;
+        .main-title-ctr{
+            justify-content: center;
+    
+        }
         p{ font-size: x-large;}
     }
-    .ctct-row{
+    .contact-row{
         width: 100%;
         margin: 100px auto;
         justify-content: center;
@@ -236,9 +178,7 @@ export default{
                 width: 90%;
                 border: 1px solid white;
                 .map-img{
-                    background: url('../assets/images/googlemap.jpg');
-                    background-position: center;
-                    background-size: cover;
+                    padding: 0;
                 }
                 .adress, .email, .nb-phone{
                     display: flex;
@@ -355,7 +295,7 @@ export default{
                         width: 100%;
                     }
                     input, textarea{
-                        background: #80C2D2;
+                        background: #017FA0;
                         &::placeholder{
                             color: white;
                             font-size: 1rem;
@@ -368,8 +308,9 @@ export default{
                         border: 1px solid white;
                         border-radius: 0;
                         padding: 5px;
+                        background: #017FA0;
                         &:hover{
-                            background: #80C2D2;
+                            transform: scale(1.1);
                         }
                     }
                 }
@@ -387,15 +328,6 @@ export default{
     }
 
 }
-.footer-ctr{
-    text-align-last: center;
-    background-color: #80C2D2;
-    p{
-        margin: 10px;
-        font-size: 1.2rem;
-        color: white;
-    }
-}
 
 @media (max-width: 1280px) {
     .contact-ctr{
@@ -407,26 +339,26 @@ export default{
 @media (max-width: 768px) {
     .contact-ctr{
         padding: 0;
-        .row{
+        .contact-row{
             justify-content: center;
             text-align: -webkit-center;
+            flex-direction: column-reverse;
+            margin: 50px auto;
+            h3{
+                font-size: 33px;
+                margin-bottom: 0;
+            }
             .info-contact{
-                justify-content: center;
-                .contents-grp{
-                    width: 100%;
-                    .contact {
-                        .number-phone p a, .email{
-                        font-size: 1rem;
-                        }
-                    }
-                }
+              .row{
+                width: 100%;
+              }
             }
             .form-column{
                 justify-content: center;
                 display: flex;
                 margin: 20px auto;
                 form{
-                    width: 85%;
+                    width: 100%;
                     padding: 10px;
                     .row{
                         input, textarea{

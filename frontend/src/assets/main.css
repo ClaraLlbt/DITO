@@ -3,14 +3,14 @@
 
 .dark{
   color-scheme: dark;
-  --color-background: #16171d; /* it's better to use a dark grey color instead of pure black */
+  --color-background: #333652; /* it's better to use a dark grey color instead of pure black */
 }
 
 .dark .app{
   color: #adb5bd;
 }
 
-.dark a, .nav-link{
+.dark a, .nav-link, .dark .btn.nav-link{
   color: #adb5bd;
 }
 
@@ -30,21 +30,30 @@
   overflow: hidden;
   font-family: 'Noto Sans', sans-serif;
 }
-h1, h2, h3, h4{
+h1, h2, h4{
   font-family: 'League Gothic', sans-serif;
 }
-.title-ctr{
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  margin-top: 70px;
-  margin-bottom: 45px;
-  font-size: 40px;
+.main-title-ctr{
+  display: flex;
+  align-items: center;
+  margin: 80px 20px;
 }
-.title-ctr span{
-  font-size: 50px;
+.main-title-ctr #four-dot-punctuation{
+  position: relative;
+  top: -4px;
+  margin-right: 25px;
+  opacity: 0;
   color: #F76F00;
   font-weight: 900;
 }
+.main-title-ctr h3{
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold;
+  margin: 0;
+  font-size: 40px;
+}
+
+
 a,.nav-link{
   text-decoration: none;
   font-weight: bold;
@@ -65,3 +74,14 @@ a,.nav-link{
   }
 }
 
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
