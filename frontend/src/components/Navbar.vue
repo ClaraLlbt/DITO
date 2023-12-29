@@ -1,11 +1,13 @@
 <script>
 import { useDark, useToggle } from "@vueuse/core";
 import { RouterLink } from "vue-router";
+import GoogleCalendar from "./GoogleCalendar.vue";
 export default{
     name: "Navbar",
     data() {
         return {
-            dark: ''
+            dark: '',
+            mobileView: false,
         };
     },
     mounted() {
@@ -19,13 +21,13 @@ export default{
             const iconContact = document.querySelector('.icon-contact');
             if (window.matchMedia("(max-width: 768px)").matches) {
                 /* La largeur minimum de l'affichage est 600 px inclus */
-                console.log("format mobile detecté");
-                iconHome.classList.add('mbl');
-                iconServices.classList.add('mbl');
-                iconContact.classList.add('mbl');
+                // console.log("format mobile detecté");
+                this.mobileView = !this.mobileView
+                console.log(this.mobileView);
+               
             }
             else {
-                console.log("format mobile non detecté");
+                // console.log("format mobile non detecté");
                 /* L'affichage est inférieur à 600px de large */
             }
         },
@@ -33,28 +35,66 @@ export default{
             const isDark = useDark();
             const toggleDark = useToggle(isDark);
             this.dark = isDark;
-            console.log(this.dark);
             const btnDkMod = document.querySelector('.item-dark-reader');
             btnDkMod.addEventListener('click', function () {
                 toggleDark();
             });
         },
     },
-    components: { RouterLink }
+    components: { RouterLink, GoogleCalendar }
 }
 </script>
 
 <template>
-    <nav class="navbar">
-        <a class="navbar-brand" href="#"><img src="../assets/dito_logo_navbar.svg" width="150" height="100" alt="Logo DITO en texte"></a>
-        
-        <div class="" id="navbarNav">
+    <div class="collapse mobile-nav" id="navbarToggleExternalContent" data-bs-theme="dark">
+        <div id="navbarNav" class="p-4">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link link-home" href="#" aria-label="Lien vers l'accueil"><router-link to="/">Home</router-link>
+                <li class="nav-item">
+                    <a class="nav-link icon-home" href="#"><i class="bi bi-house-door-fill" aria-label="Lien vers l'accueil"></i>
                         <div class="border-effect"></div>
                     </a>
-                    <a class="nav-link icon-home" href="#"><i class="bi bi-house-door-fill" aria-label="Lien vers l'accueil"></i>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link icon-services" href="#services" aria-label="Lien vers les services proposés"><i class="bi bi-gear-wide-connected"></i>
+                        <div class="border-effect"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link icon-services" href="#services" aria-label="Lien vers les services proposés"><i class="bi bi-newspaper"></i>
+                        <div class="border-effect"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link icon-contact" href="#actu" aria-label="Lien vers le formulaire de contact"><i class="bi bi-envelope-at"></i>
+                        <div class="border-effect"></div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link link-contact btn" id="btn-agenda">
+                        <i class="bi bi-calendar4-week"></i>
+                        <div class="border-effect"></div>
+                    </button>
+                </li>
+                <button id="darkmode" role="button" class="btn nav-link" aria-label="buton darkmode">
+                    <i class="bi bi-moon icon-moon" v-if="!dark"></i>
+                    <i class="bi bi-brightness-high icon-light" v-else-if="dark"></i>
+                </button>
+               
+
+            </ul>
+
+        </div>
+    </div>
+    <nav class="navbar nav navbar-expand-lg ">
+        <a v-if="!mobileView" class="navbar-brand" href="#"><img src="../assets/dito_logo_navbar.svg" width="150" height="100" alt="Logo DITO en texte"></a>
+
+        <div id="navbarNav" class="container-fluid">
+            <button class="navbar-toggler btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <ul class="navbar-nav" v-if="!mobileView">
+                <li class="nav-item">
+                    <a class="nav-link link-home" href="#" aria-label="Lien vers l'accueil"><router-link to="/">Home</router-link>
                         <div class="border-effect"></div>
                     </a>
                 </li>
@@ -62,15 +102,9 @@ export default{
                     <a class="nav-link link-services" href="#services" aria-label="Lien vers les services proposés"><router-link to="/#services">Services</router-link>  
                         <div class="border-effect"></div>
                     </a>
-                    <a class="nav-link icon-services" href="#services" aria-label="Lien vers les services proposés"><i class="bi bi-gear-wide-connected"></i>
-                        <div class="border-effect"></div>
-                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link-contact" aria-label="Lien vers le formulaire de contact"><router-link to="/actualités">Actualités</router-link>
-                        <div class="border-effect"></div>
-                    </a>
-                    <a class="nav-link icon-contact" href="#actu" aria-label="Lien vers le formulaire de contact"><i class="bi bi-envelope-at"></i>
+                    <a class="nav-link link-contact" aria-label="Lien vers le formulaire de contact"><router-link to="/actualites">Actualités</router-link>
                         <div class="border-effect"></div>
                     </a>
                 </li>
@@ -78,39 +112,53 @@ export default{
                     <a class="nav-link link-contact" href="#contact" aria-label="Lien vers le formulaire de contact">Contact
                         <div class="border-effect"></div>
                     </a>
-                    <a class="nav-link icon-contact" href="#contact" aria-label="Lien vers le formulaire de contact"><i class="bi bi-envelope-at"></i>
-                        <div class="border-effect"></div>
-                    </a>
                 </li>
                 <li class="nav-item">
-                    <button class="link-contact btn" id="btn-agenda">
+                    <button role="button" class="nav-link link-contact btn" id="btn-agenda">
                         <i class="bi bi-calendar4-week"></i>
                         <div class="border-effect"></div>
                     </button>
                 </li>
                 <li class="item-dark-reader">
-                    <btn id="darkmode" role="button" class="btn" aria-label="buton darkmode">
-                        <i class="bi bi-moon icon-moon" v-if="this.dark == false"></i>
-                        <i class="bi bi-brightness-high icon-light" v-else-if="this.dark == true"></i>
-                    </btn>
+                    <button id="darkmode" role="button" class="btn nav-link" aria-label="buton darkmode">
+                        <i class="bi bi-moon icon-moon" v-if="!dark"></i>
+                        <i class="bi bi-brightness-high icon-light" v-else-if="dark"></i>
+                    </button>
                 </li>
-               
             </ul>
         </div>
-        
     </nav>
+
+    <GoogleCalendar/>
 </template>
 
 <style lang="scss" scoped>
-nav{
+.mobile-nav{
+    background: #E9EAEC;
+    .navbar-nav{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .nav-item{
+            box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+            width: 11%;
+            text-align-last: center;
+            border-radius: 15px;
+            .nav-link{margin: auto;}
+            &:active{
+                box-shadow: inset 3px 1px 6px #bebebe, inset -2px -1px 6px #ffffff;  
+            }
+        }
+    }
+}
+.nav{
     position: fixed;
     padding: 0;
     top: auto;
     z-index: 2;
     width: 100%;
-    overflow: hidden;
-    backdrop-filter: blur(100px);
     height: 50px;
+    backdrop-filter: blur(100px);
     &:hover{
         background: #E9EAEC;
     }
@@ -120,7 +168,22 @@ nav{
     }
     #navbarNav{
         width: 100%;
+        justify-content: center;
+        .navbar-toggler{
+            border: none;
+            transform: scale(1.4);
+            position: relative;
+            top: -10px;
+            background: lightgrey;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            
+            i{ color: #F76F00;}
+        }
         ul{
+            width: 100%;
             justify-content: center;
             align-items: center;
             flex-direction: initial;
@@ -153,41 +216,26 @@ nav{
                     font-size: 1.5rem;
                     color: #F76F00;
                 }
-            }            
-            .icon-home, .icon-services, .icon-contact{
-                display: none;
-            }
+            }    
         }
     }
 }
 
 // Mobile Version
 @media (max-width: 768px) {
-    nav{
+    .mobile-nav{
+        position: fixed;
+        bottom: 50px;
+        width: 100%;
+        z-index: 2;
+    }
+    .nav{
+        bottom: 0;
         padding: 5px 0px;
         .navbar-brand{
             img{ 
                 height: 40px;
                 width: 100%;
-            }
-        }
-        #navbarNav{
-            ul{
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                li{
-                    margin: 0 10px;
-                    font-size: 1rem;
-                    .icon-home.mbl, .icon-services.mbl, .icon-contact.mbl{
-                        display: block;
-                    }
-                    .link-home, .link-services, .link-contact{
-                        display: none;
-                    }
-                }
-                
             }
         }
     }

@@ -15,6 +15,7 @@ export default {
         }
     },
     created(){
+        
         this.notyf = new Notyf({
             duration: 4000,
             position: {
@@ -23,32 +24,36 @@ export default {
             }
         });
     },
-    mounted(){
-        const button = document.querySelector('#btn-agenda')
-        button.addEventListener('click', this.connectCtr)
+    beforeMount(){
+        const buttons = document.querySelectorAll('#btn-agenda')
+        buttons.forEach(btn => {
+            btn.addEventListener('click', this.connectCtr)
+        });
     },
     methods : {
+        connectCtr(){
+            this.connectForm = !this.connectForm
+        },
         fetchUsers(){
-            axios.post('http://localhost:3000/users', {
+            axios.post('http://localhost:3000/users/client', {
                 username: this.username,
                 password: this.password,     
             })
             .then((response) => {
                 if(response && this.connectForm){
                     this.connectForm = !this.connectForm
-                    console.log(this.calendar);
                     this.calendar = !this.calendar
+                    const msgsuccess = response.data.message
+                    this.notyf.success(msgsuccess)
                 } 
             })
             .catch(error => {
                 const msgerror = error.response.data
-                this.notyf.error(msgerror.error)
+                this.notyf.error(msgerror)
                 console.log(msgerror.error);
             })
         },
-        connectCtr(){
-            this.connectForm = !this.connectForm
-        },
+        
         displayForm(){
             this.connectForm = !this.connectForm
         },
@@ -87,8 +92,8 @@ export default {
             <div class="col-12 col-lg-6">
                 <button @click="displayCalendar" class="btn btn-x"><i class="bi bi-x-circle-fill"></i></button>
 
-                <h1 class="title-ctr"><span>&#8280;</span> Bienvenue dans mon agenda</h1>
-                <p>Contactez-moi par téléphone pour confirmer valider un RDV ensemble !</p>
+                <h1 class="title-ctr"><span class="four-dot-punctuation">&#8280;</span> Bienvenue dans mon agenda</h1>
+                <p>Contactez-moi par téléphone pour confirmer un RDV ensemble !</p>
 
                 <iframe src="https://calendar.google.com/calendar/embed?src=9a05447b3ab79a20bf578c5bca5919df24256813e9e6a5ec771725febbb7d317%40group.calendar.google.com&ctz=Europe%2FParis" style="border: 0" frameborder="0" scrolling="no"></iframe>        
                 
@@ -102,7 +107,6 @@ export default {
 .calendar-ctr{
     position: fixed;
     background:  linear-gradient(180deg, rgba(51,54,82) 0%, rgba(10,131,163) 58%, rgba(233,234,236,0.8295693277310925) 100%);
-
     height: 100vh;
     top: 0;
     bottom: 0;
@@ -143,7 +147,7 @@ export default {
     .agenda{
         width: 100%;
         justify-content: center;
-        height: 60%;
+        height: 80%;
         color: white;
 
        .btn-x{
@@ -156,10 +160,17 @@ export default {
        } 
        .title-ctr{
         margin-top: 0;
+        .four-dot-punctuation{
+            margin-right: 25px;
+            color: #F76F00;
+            font-weight: 900;
+            position: relative;
+            top: -6px;
+        }
        }
        iframe{
             width: 100%;
-            height: 100%;
+            height: 85%;
             
         }
        
